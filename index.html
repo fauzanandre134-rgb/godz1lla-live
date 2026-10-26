@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Godz1lla LIVE — Gift Leaderboard</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body class="dashboard">
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">GODZ1LLA</span>
+      <span class="tag">LIVE</span>
+    </div>
+    <div class="status-pill" id="statusPill">
+      <span class="dot" id="statusDot"></span>
+      <span id="statusText">Offline</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- Control Panel -->
+    <section class="panel control-panel">
+      <h2 class="panel-title">Koneksi TikTok LIVE</h2>
+
+      <div class="form-row">
+        <label for="usernameInput">Username TikTok</label>
+        <div class="input-group">
+          <span class="prefix">@</span>
+          <input
+            id="usernameInput"
+            type="text"
+            placeholder="username_live"
+            autocomplete="off"
+            maxlength="24"
+          />
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button id="btnConnect" class="btn primary">Connect</button>
+        <button id="btnDisconnect" class="btn danger" disabled>Disconnect</button>
+        <button id="btnDemo" class="btn secondary">Mode DEMO</button>
+      </div>
+
+      <div class="demo-banner" id="demoBanner" hidden>
+        <strong>MODE DEMO</strong> — data simulasi, bukan gift TikTok sungguhan.
+        <button id="btnSimulate" class="btn tiny success">+ Simulasi Gift</button>
+      </div>
+
+      <p class="hint">
+        Masukkan username yang sedang LIVE. Tidak perlu password atau cookie.
+        Integrasi bersifat unofficial — bisa gagal jika TikTok mengubah protokol.
+      </p>
+
+      <div class="error-box" id="errorBox" hidden></div>
+
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="label">Mode</span>
+          <span class="value" id="modeValue">idle</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Room</span>
+          <span class="value" id="roomValue">—</span>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <h3 class="sub-title">Leaderboard</h3>
+      <div class="btn-row">
+        <button id="btnReset" class="btn outline">Reset Leaderboard</button>
+      </div>
+
+      <hr class="divider" />
+
+      <h3 class="sub-title">Overlay untuk LIVE Studio</h3>
+      <p class="hint">
+        Salin URL di bawah lalu tempel sebagai sumber <strong>Link</strong> di TikTok LIVE Studio.
+      </p>
+      <div class="url-box">
+        <code id="overlayUrl">/overlay</code>
+        <button id="btnCopyUrl" class="btn tiny">Salin</button>
+      </div>
+      <p class="hint small">
+        Tema overlay: <a href="/overlay?theme=neon" target="_blank">neon</a> ·
+        <a href="/overlay?theme=fire" target="_blank">fire</a> ·
+        <a href="/overlay?theme=ice" target="_blank">ice</a> ·
+        <a href="/overlay?theme=gold" target="_blank">gold</a>
+      </p>
+    </section>
+
+    <!-- Leaderboard Panel -->
+    <section class="panel leaderboard-panel">
+      <div class="panel-header">
+        <h2 class="panel-title">Top Gifters</h2>
+        <span class="badge" id="countBadge">0</span>
+      </div>
+      <div class="leaderboard" id="leaderboard">
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">👑</div>
+          <p>Belum ada gift.<br />Connect ke LIVE atau jalankan DEMO.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Gifts -->
+    <section class="panel recent-panel">
+      <h2 class="panel-title">Gift Terbaru</h2>
+      <div class="recent-list" id="recentList">
+        <div class="empty-state small">Menunggu gift...</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Godz1lla LIVE v1.0</span>
+    <span class="sep">·</span>
+    <span>Unofficial TikTok integration — use at your own risk</span>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

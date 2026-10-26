@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Godz1lla Overlay</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    html, body {
+      background: transparent !important;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    .bg-grid, .bg-glow, .topbar, .footer, .control-panel, .recent-panel {
+      display: none !important;
+    }
+  </style>
+</head>
+<body class="overlay-page" data-theme="neon">
+  <div class="overlay-wrap" id="overlayWrap">
+    <div class="overlay-header">
+      <span class="overlay-brand">GODZ1LLA</span>
+      <span class="overlay-mode" id="overlayMode"></span>
+    </div>
+    <div class="overlay-list" id="overlayList">
+      <!-- filled by JS -->
+    </div>
+  </div>
+  <script src="/overlay.js"></script>
+</body>
+</html>

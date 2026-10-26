@@ -1,0 +1,28 @@
+{
+  "name": "godz1lla-live",
+  "version": "1.0.0",
+  "description": "Godz1lla LIVE — Real-time TikTok LIVE gift leaderboard dashboard & overlay",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "tiktok",
+    "live",
+    "gift",
+    "leaderboard",
+    "overlay",
+    "godz1lla"
+  ],
+  "author": "Godz1lla LIVE",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "tiktok-live-connector": "^1.2.3",
+    "ws": "^8.18.0"
+  }
+}
